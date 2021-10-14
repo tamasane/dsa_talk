@@ -63,7 +63,6 @@ int main() {
  * r: end of segment in input array
  * x: node position in the segment tree
  */
-
 int buildST(int arr[], int* st, int l, int r, int x) {
     // if segment is of 1 length, 
     // store the value of the segment 
