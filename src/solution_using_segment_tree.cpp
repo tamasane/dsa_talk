@@ -21,12 +21,12 @@ int main() {
     for (int i=0; i<n; i++) { cin >> arr[i]; if(print) cout << arr[i] << ", "; }
     if (print) cout << "]" << endl;
 
-    // calculating the size of fenwick / segment tree
+    // calculating the size of segment tree
     int x = (int)(ceil(log2(n)));
     int max_size = 2*(int)pow(2, x) - 1;
     int *st = new int[max_size];
 
-    // building the fenwick tree
+    // building the segment tree
     buildST(arr, st, 0, n-1, 0);
 
     // reading a query and finding the max in the range
@@ -41,7 +41,7 @@ int main() {
         a = q_start > q_end ? q_end: q_start;
         b = q_start > q_end ? q_start: q_end;
 
-        // get max value from fenwick tree
+        // get max value from segment tree
         max = getMax(st, 0, n-1, a, b, 0);
         if (print) cout << "[" << a << "," << b << "] = " << max << endl;
     }
